@@ -2,8 +2,8 @@
 
 import {jsx} from 'tvdml';
 
-export default function Loader({attrs = {}}) {
-	let {title, heroImg} = attrs;
+export default function Loader(props) {
+	const {title, heroImg} = props;
 	let banner;
 
 	if (heroImg) {

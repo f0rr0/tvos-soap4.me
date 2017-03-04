@@ -3,7 +3,7 @@
 import {jsx} from 'tvdml';
 import {link} from '../utils';
 
-export default function Tile({key, attrs = {}, events = {}}) {
+export default function Tile(props) {
 	const {
 		route,
 		title,
@@ -13,18 +13,14 @@ export default function Tile({key, attrs = {}, events = {}}) {
 		isWatched,
 		payload = {},
 		autoHighlight,
-	} = attrs;
-
-	const {
 		onPlay,
 		onSelect,
 		onHighlight,
 		onHoldselect,
-	} = events;
+	} = props;
 
 	return (
 		<lockup
-			key={key}
 			onPlay={onPlay}
 			onSelect={onSelect || link(route, payload)}
 			onHighlight={onHighlight}
